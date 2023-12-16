@@ -1,0 +1,20 @@
+18:31:11 **** Auto Build of configuration Debug for project pr1_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 Linux gcc compiler
+arm-linux-gnueabihf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../pr1_1_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: pr1_1.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../pr1_1_bsp/ps7_cortexa9_0/lib -o "pr1_1.elf" ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+/tools/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld: warning: ./src/platform.o uses 32-bit enums yet the output is to use variable-size enums; use of enum values across objects may fail
+/tools/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld: ../../pr1_1_bsp/ps7_cortexa9_0/lib/libxil.a(xil-crt0.o): in function `_start':
+/home/csl-403/Downloads/YOLO/YOLO.sdk/pr1_1_bsp/ps7_cortexa9_0/libsrc/standalone_v7_0/src/xil-crt0.S:138: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:41: pr1_1.elf] Error 1
+
+18:31:11 Build Finished (took 120ms)
+

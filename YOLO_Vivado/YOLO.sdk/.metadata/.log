@@ -1,0 +1,60 @@
+!SESSION 2023-12-08 18:58:37.148 -----------------------------------------------
+eclipse.buildId=2019.1
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk
+
+This is a continuation of log file C:\Users\drpro\Downloads\YOLO2\YOLO\YOLO.sdk\.metadata\.bak_0.log
+Created Time: 2023-12-10 20:23:50.924
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:23:50.924
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:23:50.949
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:23:50.950
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:23:50.962
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:23:50.970
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:23:50.975
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:24:08.266
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:24:08.298
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:24:08.298
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:24:08.311
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:24:08.311
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-10 20:24:08.320
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.sdk/proj_1_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 1 0 2023-12-12 18:28:05.758
+!MESSAGE Executed Webtalk command
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-12 18:28:05.798
+!MESSAGE XSCT Command: [disconnect tcfchan#8], Thread: Thread-808
+
+!ENTRY com.xilinx.sdk.utils 0 0 2023-12-12 18:28:05.859
+!MESSAGE XSCT command with result: [disconnect tcfchan#8], Result: [null, ]. Thread: Thread-808

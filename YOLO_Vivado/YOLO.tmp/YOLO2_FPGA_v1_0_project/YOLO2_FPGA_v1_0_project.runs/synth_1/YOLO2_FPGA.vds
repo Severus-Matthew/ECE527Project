@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Dec  3 23:18:44 2023
+# Process ID: 9134
+# Current directory: /home/csl-403/Downloads/YOLO/YOLO.tmp/YOLO2_FPGA_v1_0_project/YOLO2_FPGA_v1_0_project.runs/synth_1
+# Command line: vivado -log YOLO2_FPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source YOLO2_FPGA.tcl
+# Log file: /home/csl-403/Downloads/YOLO/YOLO.tmp/YOLO2_FPGA_v1_0_project/YOLO2_FPGA_v1_0_project.runs/synth_1/YOLO2_FPGA.vds
+# Journal file: /home/csl-403/Downloads/YOLO/YOLO.tmp/YOLO2_FPGA_v1_0_project/YOLO2_FPGA_v1_0_project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source YOLO2_FPGA.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/csl-403/Downloads/Xilinx_Vivado_SDK_2018.2_0614_1954/proj_11/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'.
+Command: synth_design -top YOLO2_FPGA -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9151 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1762.781 ; gain = 152.688 ; free physical = 7054 ; free virtual = 12691
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [/tools/Xilinx/Vivado/2019.1/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:4873]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [/tools/Xilinx/Vivado/2019.1/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:4876]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [/tools/Xilinx/Vivado/2019.1/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:4879]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [/tools/Xilinx/Vivado/2019.1/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:4886]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [/tools/Xilinx/Vivado/2019.1/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:4886]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1821.531 ; gain = 211.438 ; free physical = 7078 ; free virtual = 12715
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+6 Infos, 0 Warnings, 0 Critical Warnings and 6 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  3 23:18:53 2023...

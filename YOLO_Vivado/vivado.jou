@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Dec 16 01:02:38 2023
+# Process ID: 6300
+# Current directory: C:/Users/drpro/Downloads/YOLO2/YOLO
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13732 C:\Users\drpro\Downloads\YOLO2\YOLO\YOLO.xpr
+# Log file: C:/Users/drpro/Downloads/YOLO2/YOLO/vivado.log
+# Journal file: C:/Users/drpro/Downloads/YOLO2/YOLO\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/drpro/Downloads/YOLO2/YOLO/YOLO.xpr
+update_compile_order -fileset sources_1
+/YOLO2/YOLO/YOLO.srcs/sources_1/bd/design_1/design_1.bd}
+update_compile_order -fileset sources_1

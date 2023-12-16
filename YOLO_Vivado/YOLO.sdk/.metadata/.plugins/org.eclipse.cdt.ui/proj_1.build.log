@@ -1,0 +1,113 @@
+20:28:25 **** Auto Build of configuration Debug for project proj_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/cnn.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/cnn.o" -MMD -MP -MF"src/cnn.d" -MT"src/cnn.o" -o "src/cnn.o" "../src/cnn.cpp"
+../src/cnn.cpp: In function 'void copy_mem2dev(uint8_t*, uint32_t, long unsigned int)':
+../src/cnn.cpp:15:61: error: 'PROT_READ' was not declared in this scope
+  virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                             ^~~~~~~~~
+../src/cnn.cpp:15:73: error: 'PROT_WRITE' was not declared in this scope
+  virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                                         ^~~~~~~~~~
+../src/cnn.cpp:15:73: note: suggested alternative: 'S_IWRITE'
+  virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                                         ^~~~~~~~~~
+                                                                         S_IWRITE
+../src/cnn.cpp:15:85: error: 'MAP_SHARED' was not declared in this scope
+  virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                                                     ^~~~~~~~~~
+../src/cnn.cpp:15:34: error: 'mmap' was not declared in this scope
+  virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                  ^~~~
+../src/cnn.cpp:15:34: note: suggested alternative: 'fmax'
+  virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                  ^~~~
+                                  fmax
+../src/cnn.cpp:16:21: error: 'MAP_FAILED' was not declared in this scope
+  if(virtual_addr == MAP_FAILED)
+                     ^~~~~~~~~~
+../src/cnn.cpp:23:2: error: 'munmap' was not declared in this scope
+  munmap((void *)virtual_addr, byte_num);
+  ^~~~~~
+../src/cnn.cpp: In function 'void copy_dev2mem(uint8_t*, uint32_t, long unsigned int)':
+../src/cnn.cpp:38:62: error: 'PROT_READ' was not declared in this scope
+   virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                              ^~~~~~~~~
+../src/cnn.cpp:38:74: error: 'PROT_WRITE' was not declared in this scope
+   virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                                          ^~~~~~~~~~
+../src/cnn.cpp:38:74: note: suggested alternative: 'S_IWRITE'
+   virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                                          ^~~~~~~~~~
+                                                                          S_IWRITE
+../src/cnn.cpp:38:86: error: 'MAP_SHARED' was not declared in this scope
+   virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                                                                      ^~~~~~~~~~
+../src/cnn.cpp:38:35: error: 'mmap' was not declared in this scope
+   virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                   ^~~~
+../src/cnn.cpp:38:35: note: suggested alternative: 'fmax'
+   virtual_addr = (unsigned char *)mmap(NULL, RequestByteNum, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)in_buffer);
+                                   ^~~~
+                                   fmax
+../src/cnn.cpp:39:21: error: 'MAP_FAILED' was not declared in this scope
+  if(virtual_addr == MAP_FAILED)
+                     ^~~~~~~~~~
+../src/cnn.cpp:46:2: error: 'munmap' was not declared in this scope
+  munmap((void *)virtual_addr, byte_num);
+  ^~~~~~
+../src/cnn.cpp: In function 'int copy_file2mem(char*, uint32_t, long unsigned int)':
+../src/cnn.cpp:57:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  printf("Total Byte Num = %d\n Address 0x%X\n", byte_num, in_buffer);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~~
+../src/cnn.cpp:57:9: warning: format '%X' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+../src/cnn.cpp:62:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while(rd_num = fread(buffer, sizeof(unsigned char), HPAGESIZE, fp))
+        ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/cnn.cpp:67:10: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long unsigned int' [-Wformat=]
+   printf("rd_num=%d, offset=%d\n", rd_num, offset);
+          ^~~~~~~~~~~~~~~~~~~~~~~~          ~~~~~~
+../src/cnn.cpp:70:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("copy_file2mem offset=%d\n",offset);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~
+../src/cnn.cpp: In function 'int copy_mem2file(char*, uint32_t, long unsigned int)':
+../src/cnn.cpp:93:15: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  while(addbyte=((x<HPAGESIZE)?x:(HPAGESIZE)))
+        ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/cnn.cpp:100:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("copy_mem2file offset=%d\n",offset);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~
+../src/cnn.cpp: In function 'int FPGA_Acc(uint64_t, uint64_t, uint64_t, uint64_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, int32_t, int32_t, int32_t, int16_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, int32_t, int32_t, int32_t, int32_t)':
+../src/cnn.cpp:123:55: error: 'PROT_READ' was not declared in this scope
+  xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+                                                       ^~~~~~~~~
+../src/cnn.cpp:123:67: error: 'PROT_WRITE' was not declared in this scope
+  xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+                                                                   ^~~~~~~~~~
+../src/cnn.cpp:123:67: note: suggested alternative: 'S_IWRITE'
+  xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+                                                                   ^~~~~~~~~~
+                                                                   S_IWRITE
+../src/cnn.cpp:123:79: error: 'MAP_SHARED' was not declared in this scope
+  xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+                                                                               ^~~~~~~~~~
+../src/cnn.cpp:123:35: error: 'mmap' was not declared in this scope
+  xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+                                   ^~~~
+../src/cnn.cpp:123:35: note: suggested alternative: 'fmax'
+  xbase_address = (unsigned char *)mmap(NULL, map_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)PhysicalAddress);
+                                   ^~~~
+                                   fmax
+../src/cnn.cpp:124:22: error: 'MAP_FAILED' was not declared in this scope
+  if(xbase_address == MAP_FAILED)
+                      ^~~~~~~~~~
+../src/cnn.cpp:190:2: error: 'munmap' was not declared in this scope
+  munmap((void *)xbase_address, map_len);
+  ^~~~~~
+make: *** [src/subdir.mk:26: src/cnn.o] Error 1
+
+20:28:26 Build Finished (took 1s.75ms)
+

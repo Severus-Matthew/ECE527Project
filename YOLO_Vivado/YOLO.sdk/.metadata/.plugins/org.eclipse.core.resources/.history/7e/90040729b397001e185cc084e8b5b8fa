@@ -1,0 +1,108 @@
+#ifndef __MNV1_H
+#define __MNV1_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include <linux/fb.h>
+#include <time.h>
+#include <sys/time.h>
+#include <stdint.h>
+#include <math.h>
+
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_AP_CTRL             0x000
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_GIE                 0x004
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_IER                 0x008
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_ISR                 0x00c
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT_R_DATA        0x010
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT1_DATA         0x018
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT2_DATA         0x020
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT3_DATA         0x028
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT_R_DATA       0x030
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT1_DATA        0x038
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_WEIGHT_DATA         0x040
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_BETA_DATA           0x048
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INFM_NUM_DATA       0x050
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_OUTFM_NUM_DATA      0x058
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_KERNEL_SIZE_DATA    0x060
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_KERNEL_STRIDE_DATA  0x068
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT_W_DATA        0x070
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUT_H_DATA        0x078
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT_W_DATA       0x080
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUT_H_DATA       0x088
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_PADDING_DATA        0x090
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_ISNL_DATA           0x098
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_ISBN_DATA           0x0a0
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_TM_DATA             0x0a8
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_TN_DATA             0x0b0
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_TR_DATA             0x0b8
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_TC_DATA             0x0c0
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_MLOOPS_DATA         0x0c8
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_NLOOPS_DATA         0x0d0
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_RLOOPS_DATA         0x0d8
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_CLOOPS_DATA         0x0e0
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_LAYERTYPE_DATA      0x0e8
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_INPUTQ_DATA         0x0f0
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_OUTPUTQ_DATA        0x0f8
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_WEIGHTQ_DATA        0x100
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_BETAQ_DATA          0x108
+#define XYOLO2_FPGA_CTRL_BUS_ADDR_TROW_LOOPS_DATA     0x110
+
+#define ACC_BASEADDR     0x43c00000
+#define WEIGHT_BASEADDR  0x10000000//0x06129EC0 = 101883584 Bytes
+#define BETA_BASEADDR    0x16140000//0x00005414 =     21524 Bytes
+#define MEM_BASEADDR     0x16180000//
+
+//#define ACC_BASEADDR     0xA0000000
+//#define WEIGHT_BASEADDR  0x60000000//0x06129EC0 = 101883584 Bytes
+//#define BETA_BASEADDR    0x66140000//0x00005414 =     21524 Bytes
+//#define MEM_BASEADDR     0x66180000//
+
+#define HW_S 2
+#define K 3
+#define Tn 2
+#define Tm 60
+#define Tr 26
+#define Tc 26
+#define MAX_BETA_LENGTH 1024
+#define INTERWIDTH 19
+
+#define WriteReg(BaseAddress, RegOffset, Data) *(volatile uint32_t*)((BaseAddress) + (RegOffset)) = (Data)
+#define ReadReg(BaseAddress, RegOffset) *(volatile uint32_t*)((BaseAddress) + (RegOffset))
+
+#define MIN_diy(x,y) ((x) < (y) ? (x) : (y))
+#define MAX_diy(x,y) ((x) > (y) ? (x) : (y))
+
+#define FALSE 0
+#define TRUE  1
+
+#define VALID 0
+#define SAME  1
+
+#define LT_CONV  0
+#define LT_MAXPOOL 1
+
+#define MIN_NEG (0x8001)
+
+#define OnChipIB_Width  ((Tc-1)*HW_S+K)
+#define OnChipIB_Height ((Tr-1)*HW_S+K)
+
+#define HPAGESIZE (2*1024*1024)
+
+void copy_mem2dev(uint8_t *orig,uint32_t byte_num, unsigned long in_buffer);
+
+void copy_dev2mem(uint8_t *dst,uint32_t byte_num, unsigned long in_buffer);
+
+int copy_file2mem(char *bin_file,uint32_t byte_num,unsigned long in_buffer);
+
+int copy_mem2file(char *bin_file,uint32_t byte_num,unsigned long in_buffer);
+
+int FPGA_Acc(uint64_t In_Address, uint64_t Out_Address, uint64_t Weight_offset, uint64_t Beta_offset, uint32_t k_s_pad_ltype, uint32_t iofm_num, uint32_t ifm_w_h, uint32_t ofm_w_h,
+	uint32_t TRTC, uint32_t TMTN, int32_t OFM_num_bound, int32_t mLoopsxTM, int32_t mLoops_a1xTM, int16_t pad_val, uint32_t TRowTCol,
+	uint32_t IHW, uint32_t OHW, uint32_t KK_INumxKK, uint32_t en_bits, int32_t WeightQ, int32_t BetaQ, int32_t InputQ, int32_t OutputQ);//enable_bits[2:0]={IsReLU, LoadBias, IsNotConv}
+
+#endif

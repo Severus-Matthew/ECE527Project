@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Dec  3 23:18:44 2023
+# Process ID: 9134
+# Current directory: /home/csl-403/Downloads/YOLO/YOLO.tmp/YOLO2_FPGA_v1_0_project/YOLO2_FPGA_v1_0_project.runs/synth_1
+# Command line: vivado -log YOLO2_FPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source YOLO2_FPGA.tcl
+# Log file: /home/csl-403/Downloads/YOLO/YOLO.tmp/YOLO2_FPGA_v1_0_project/YOLO2_FPGA_v1_0_project.runs/synth_1/YOLO2_FPGA.vds
+# Journal file: /home/csl-403/Downloads/YOLO/YOLO.tmp/YOLO2_FPGA_v1_0_project/YOLO2_FPGA_v1_0_project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source YOLO2_FPGA.tcl -notrace
